@@ -1,0 +1,454 @@
+/* ==========================================================================
+   PORTAFOLIO WEB: estilos
+   Sin JavaScript. Mobile-first: los estilos base son para celular y los
+   media queries (640px, 768px, 960px) amplían el diseño en pantallas mayores.
+   ========================================================================== */
+
+/* ---------- 1. Tokens de diseño: tema oscuro (por defecto) ---------- */
+:root {
+  --bg: #060F26;
+  --encabezado: #030A1A;
+  --superficie: #0A1938;
+  --borde: #17294F;
+  --texto: #F1F5FF;
+  --texto-suave: #B8C6EA;
+  --acento: #7C9BFF;
+  --sobre-acento: #030A1A;
+
+  --fuente: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fuente-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radio: 12px;
+  --ancho-max: 1120px;
+
+  color-scheme: dark;
+}
+
+/* Tema claro: se activa con la casilla #tema del encabezado */
+:root:has(#tema:checked) {
+  --bg: #F4F7FF;
+  --encabezado: #FFFFFF;
+  --superficie: #FFFFFF;
+  --borde: #D5DDF0;
+  --texto: #0B1533;
+  --texto-suave: #46557A;
+  --acento: #2F44C9;
+  --sobre-acento: #FFFFFF;
+
+  color-scheme: light;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-padding-top: 7rem; /* evita que el encabezado fijo tape los títulos */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+figure { margin: 0; }
+
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 700; margin-bottom: 1.75rem; }
+h3 { font-size: 1.125rem; font-weight: 600; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--acento); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+
+/* Utilidades */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contenedor {
+  width: min(100% - 2rem, var(--ancho-max));
+  margin-inline: auto;
+}
+
+/* ---------- 3. Selector de idioma (solo CSS) ----------
+   Español visible por defecto; EN y FR se muestran al marcar su botón. */
+span[lang="en"],
+span[lang="fr"] { display: none; }
+
+:root:has(#idioma-en:checked) span[lang="es"],
+:root:has(#idioma-fr:checked) span[lang="es"] { display: none; }
+
+:root:has(#idioma-en:checked) span[lang="en"],
+:root:has(#idioma-fr:checked) span[lang="fr"] { display: inline; }
+
+/* ---------- 4. Enlace para saltar al contenido ---------- */
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  background: var(--acento);
+  color: var(--sobre-acento);
+  border-radius: 8px;
+  font-weight: 600;
+}
+.saltar:focus { top: 0.5rem; }
+
+/* ---------- 5. Encabezado y navegación ---------- */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--encabezado);
+  border-bottom: 1px solid var(--borde);
+}
+
+.encabezado__interior {
+  width: min(100% - 2rem, var(--ancho-max));
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-top: 0.5rem;
+}
+
+.logo {
+  font-family: var(--fuente-mono);
+  font-weight: 500;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.controles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botones de idioma */
+.idiomas {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.idiomas label,
+.tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: var(--superficie);
+  color: var(--texto);
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.idiomas label:hover,
+.tema:hover { border-color: var(--acento); }
+
+.idiomas input:checked + label {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--sobre-acento);
+  font-weight: 500;
+}
+
+.idiomas input:focus-visible + label,
+#tema:focus-visible + .tema {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+}
+
+/* Botón de tema: sol en oscuro, luna en claro */
+.icono-luna { display: none; }
+:root:has(#tema:checked) .icono-sol { display: none; }
+:root:has(#tema:checked) .icono-luna { display: block; }
+
+/* Menú: en móvil es una franja con desplazamiento horizontal, sin JS */
+.menu {
+  order: 3;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.menu ul {
+  display: flex;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.menu a:hover { color: var(--acento); }
+
+/* ---------- 6. Secciones ---------- */
+main > section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--borde);
+}
+
+main > section.hero { border-top: 0; }
+
+/* ---------- 7. Inicio ---------- */
+.hero { padding: 2.5rem 0 3.5rem; }
+
+.hero__interior {
+  display: flex;
+  flex-direction: column-reverse; /* en móvil la imagen va arriba del texto */
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.saludo {
+  color: var(--texto-suave);
+  margin-bottom: 0.5rem;
+}
+
+.perfil {
+  margin: 0.75rem 0 1.75rem;
+  color: var(--texto-suave);
+  font-size: 1.125rem;
+  max-width: 36rem;
+}
+
+.avatar {
+  width: clamp(140px, 42vw, 220px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Botones */
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--acento);
+  border-radius: 8px;
+  background: var(--acento);
+  color: var(--sobre-acento);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--acento);
+}
+
+.boton:hover { background: var(--texto); border-color: var(--texto); color: var(--bg); }
+.boton--secundario:hover { background: var(--acento); border-color: var(--acento); color: var(--sobre-acento); }
+
+/* ---------- 8. Tarjetas y rejillas ---------- */
+.tarjeta {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.proyecto,
+.rejilla > .tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rejilla figure img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Certificados: se muestran completos (sin recortar) y con borde sutil */
+.certificado figure img {
+  aspect-ratio: auto;
+  object-fit: contain;
+  border: 1px solid var(--borde);
+}
+
+.detalle { color: var(--texto-suave); font-size: 0.875rem; }
+
+.enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin-top: auto;
+}
+
+.enlaces a { display: inline-flex; align-items: center; min-height: 44px; }
+
+.proyecto p:not(.enlaces) { color: var(--texto-suave); }
+
+/* ---------- 9. Sobre mí ---------- */
+.sobre {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.sobre > p { color: var(--texto-suave); max-width: 65ch; }
+
+.datos { margin: 0; }
+.datos dt {
+  color: var(--texto-suave);
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+.datos dd { margin: 0 0 1rem; }
+.datos dd:last-child { margin-bottom: 0; }
+
+/* ---------- 10. Habilidades ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chips li {
+  padding: 0.375rem 0.875rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--superficie);
+  font-family: var(--fuente-mono);
+  font-size: 0.8125rem;
+}
+
+.chips--pequenos { gap: 0.5rem; }
+.chips--pequenos li { padding: 0.25rem 0.625rem; font-size: 0.75rem; }
+
+/* ---------- 11. Contacto y pie ---------- */
+.contacto { text-align: center; }
+.contacto address { font-style: normal; }
+
+.correo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  word-break: break-word;
+}
+
+.acciones--centro { align-items: stretch; justify-content: center; }
+
+.pie {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--borde);
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (de menor a mayor)
+   ========================================================================== */
+
+/* Móviles grandes y tablets pequeñas */
+@media (min-width: 640px) {
+  .rejilla { grid-template-columns: repeat(2, 1fr); }
+
+  .acciones { flex-direction: row; flex-wrap: wrap; }
+  .hero__interior .acciones { justify-content: center; }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  main > section { padding: 4.5rem 0; }
+  .hero { padding: 5rem 0; }
+
+  .hero__interior {
+    flex-direction: row;       /* texto a la izquierda, imagen a la derecha */
+    justify-content: space-between;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .hero__interior .acciones { justify-content: flex-start; }
+
+  .sobre { grid-template-columns: 2fr 1fr; align-items: start; gap: 2.5rem; }
+}
+
+/* Escritorio: el menú pasa a la misma fila que logo y controles */
+@media (min-width: 960px) {
+  html { scroll-padding-top: 5rem; }
+
+  .encabezado__interior {
+    flex-wrap: nowrap;
+    padding-block: 0;
+    min-height: 64px;
+  }
+
+  .menu { order: 0; width: auto; overflow: visible; }
+  .menu ul { gap: 1.75rem; }
+
+  .rejilla { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================================================
+   ACCESIBILIDAD: respetar a quien prefiere menos movimiento
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

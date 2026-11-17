@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriel Antonio Sánchez Laveaga | Desarrollador Back-End</title>
+  <meta name="description" content="Portafolio de Gabriel Antonio Sánchez Laveaga, desarrollador Back-End. Proyectos, formación y contacto.">
+  <link rel="icon" type="image/svg+xml" href="img/foto-perfil.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="saltar" href="#contenido">
+    <span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span><span lang="fr">Aller au contenu</span>
+  </a>
+
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <!-- EDITA: tus iniciales -->
+      <a class="logo" href="#inicio">&lt;GA/&gt;</a>
+
+      <div class="controles">
+        <fieldset class="idiomas">
+          <legend class="sr-only">
+            <span lang="es">Idioma</span><span lang="en">Language</span><span lang="fr">Langue</span>
+          </legend>
+          <input class="sr-only" type="radio" name="idioma" id="idioma-es" checked>
+          <label for="idioma-es"><span aria-hidden="true">ES</span><span class="sr-only">Español</span></label>
+          <input class="sr-only" type="radio" name="idioma" id="idioma-en">
+          <label for="idioma-en"><span aria-hidden="true">EN</span><span class="sr-only">English</span></label>
+          <input class="sr-only" type="radio" name="idioma" id="idioma-fr">
+          <label for="idioma-fr"><span aria-hidden="true">FR</span><span class="sr-only">Français</span></label>
+        </fieldset>
+
+        <input class="sr-only" type="checkbox" id="tema">
+        <label class="tema" for="tema">
+          <svg class="icono-sol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icono-luna" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="sr-only">
+            <span lang="es">Cambiar entre tema claro y oscuro</span><span lang="en">Switch between light and dark theme</span><span lang="fr">Basculer entre thème clair et sombre</span>
+          </span>
+        </label>
+      </div>
+
+      <nav class="menu" aria-label="Principal">
+        <ul>
+          <li><a href="#inicio"><span lang="es">Inicio</span><span lang="en">Home</span><span lang="fr">Accueil</span></a></li>
+          <li><a href="#sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About me</span><span lang="fr">À propos</span></a></li>
+          <li><a href="#habilidades"><span lang="es">Habilidades</span><span lang="en">Skills</span><span lang="fr">Compétences</span></a></li>
+          <li><a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span><span lang="fr">Projets</span></a></li>
+          <li><a href="#certificaciones"><span lang="es">Certificaciones</span><span lang="en">Certifications</span><span lang="fr">Certifications</span></a></li>
+          <li><a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span><span lang="fr">Contact</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- INICIO -->
+    <section id="inicio" class="hero" aria-labelledby="titulo-inicio">
+      <div class="contenedor hero__interior">
+        <div class="hero__texto">
+          <p class="saludo"><span lang="es">Hola, soy</span><span lang="en">Hi, I'm</span><span lang="fr">Bonjour, je suis</span></p>
+          <!-- EDITA: tu nombre completo -->
+          <h1 id="titulo-inicio">Gabriel Antonio Sánchez Laveaga</h1>
+          <!-- EDITA: tu perfil técnico en una línea -->
+          <p class="perfil">
+            <span lang="es">Desarrollador Back-End enfocado en construir aplicaciones completas.</span>
+            <span lang="en">Back-End developer focused on building complete applications.</span>
+            <span lang="fr">Développeur Back-End spécialisé dans la création d’applications complètes.</span>
+          </p>
+          <div class="acciones">
+            <a class="boton" href="#proyectos"><span lang="es">Ver proyectos</span><span lang="en">View projects</span><span lang="fr">Voir les projets</span></a>
+            <!-- EDITA: reemplaza cv/CV.pdf por tu currículum real (mismo nombre o actualiza el enlace) -->
+            <a class="boton boton--secundario" href="https://github.com/Broodyy" download><span lang="es">&lt;GitHub/&gt;</span><span lang="en">&lt;GitHub/&gt;</span><span lang="fr">&lt;GitHub/&gt;</span></a>
+          </div>
+        </div>
+        <img class="avatar" src="img/foto-perfil.png" width="400" height="400" alt="Avatar con las iniciales GA">
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="contenedor">
+        <h2 id="titulo-sobre-mi"><span lang="es">Sobre mí</span><span lang="en">About me</span><span lang="fr">À propos</span></h2>
+        <div class="sobre">
+          <p>
+            <span lang="es">Soy estudiante de Ingeniería en tecnologías de la información e innovación digital en la Universidad Politécnica de Sinaloa. Soy una persona curiosa y me interesa aprender tecnologías nuevas. Me enfoco en el desarrollo de aplicaciones completas: diseñar la base de datos con MySQL, programar la lógica en Java, conectar ambas partes mediante JDBC y llevar el control de versiones con Git. Busco seguir creciendo como desarrollador Back-End y aplicar lo que aprendo en proyectos reales.</span>
+            <span lang="en">I am an Information Technology and Digital Innovation Engineering student at the Polytechnic University of Sinaloa. I am a curious person and I am interested in learning new technologies. I focus on building complete applications: designing the database with MySQL, writing the logic in Java, connecting both parts through JDBC, and managing versions with Git. I want to keep growing as a Back-End developer and apply what I learn in real projects.</span>
+            <span lang="fr">Je suis étudiant en ingénierie des technologies de l’information et de l’innovation numérique à l’Université polytechnique de Sinaloa. Je suis une personne curieuse et je m’intéresse aux nouvelles technologies. Je me concentre sur le développement d’applications complètes : concevoir la base de données avec MySQL, écrire la logique en Java, relier les deux parties grâce à JDBC et gérer les versions avec Git. Je souhaite continuer à progresser en tant que développeur Back-End et appliquer ce que j’apprends dans des projets réels.</span>
+          </p>
+          <dl class="tarjeta datos">
+            <dt><span lang="es">Formación</span><span lang="en">Education</span><span lang="fr">Formation</span></dt>
+            <dd>
+              <span lang="es">Ingeniería en tecnologías de la información e innovación digital<br>Universidad Politécnica de Sinaloa<br>Ingreso en 2025 · Cursando el 4.º cuatrimestre de 10</span>
+              <span lang="en">Engineering in Information Technology and Digital Innovation<br>Polytechnic University of Sinaloa<br>Started in 2025 · Currently in the 4th of 10 four-month terms</span>
+              <span lang="fr">Ingénierie des technologies de l’information et de l’innovation numérique<br>Université polytechnique de Sinaloa<br>Entrée en 2025 · Actuellement au 4e quadrimestre sur 10</span>
+            </dd>
+            <dt><span lang="es">Idiomas</span><span lang="en">Languages</span><span lang="fr">Langues</span></dt>
+            <dd>
+              <span lang="es">Español (nativo) · Inglés (B1)</span>
+              <span lang="en">Spanish (native) · English (B1)</span>
+              <span lang="fr">Espagnol (langue maternelle) · Anglais (B1)</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" aria-labelledby="titulo-habilidades">
+      <div class="contenedor">
+        <h2 id="titulo-habilidades"><span lang="es">Habilidades</span><span lang="en">Skills</span><span lang="fr">Compétences</span></h2>
+        <ul class="chips">
+          <li>Java</li>
+          <li>JDBC</li>
+          <li>MySQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Git</li>
+          <li>Linux</li>
+          <li><span lang="es">Redes</span><span lang="en">Networking</span><span lang="fr">Réseaux</span></li>
+          <li>Switching</li>
+          <li>Routing</li>
+          <li><span lang="es">Redes inalámbricas</span><span lang="en">Wireless networks</span><span lang="fr">Réseaux sans fil</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="proyectos" aria-labelledby="titulo-proyectos">
+      <div class="contenedor">
+        <h2 id="titulo-proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span><span lang="fr">Projets</span></h2>
+        <div class="rejilla">
+
+          <article class="tarjeta proyecto">
+            <figure>
+              <img src="img/gestor-tareas-captura.png" width="640" height="400" alt="" loading="lazy">
+            </figure>
+            <h3>Gestor de Tareas</h3>
+            <p>
+              <span lang="es">Ayuda a organizarte con tus tareas y consultar pendientes</span>
+              <span lang="en">It helps you organize your tasks and check pending items.</span>
+              <span lang="fr">Cela vous aide à organiser vos tâches et à vérifier les éléments en attente.</span>
+            </p>
+            <ul class="chips chips--pequenos"><li>Java</li><li>MySQL</li><li>JDBC</li></ul>
+            <p class="enlaces">
+              <!-- EDITA: enlaces reales a la demo y al repositorio -->
+              <a href="https://github.com/Broodyy/Gestor-de-tareas/tree/main/src/main/java/org/example" target="_blank" rel="noopener noreferrer"><span lang="es">Código</span><span lang="en">Code</span><span lang="fr">Code</span></a>
+            </p>
+          </article>
+
+          <article class="tarjeta proyecto">
+            <figure>
+              <img src="img/sitio-web-restaurante.png" width="640" height="400" alt="" loading="lazy">
+            </figure>
+            <h3>E-commers Restaurante</h3>
+            <p>
+              <span lang="es">Sitio web de un Restaurante Mexicano.</span>
+              <span lang="en">Website of a Mexican Restaurant.</span>
+              <span lang="fr">Site web d'un restaurant mexicain.</span>
+            </p>
+            <ul class="chips chips--pequenos"><li>HTML</li><li>CSS</li></ul>
+            <p class="enlaces">
+              <a href="https://github.com/Broodyy/Sitio-Web-Restaurante" target="_blank" rel="noopener noreferrer"><span lang="es">Código</span><span lang="en">Code</span><span lang="fr">Code</span></a>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="certificaciones" aria-labelledby="titulo-certificaciones">
+      <div class="contenedor">
+        <h2 id="titulo-certificaciones"><span lang="es">Certificaciones</span><span lang="en">Certifications</span><span lang="fr">Certifications</span></h2>
+        <div class="rejilla">
+          <article class="tarjeta certificado">
+            <figure>
+              <img src="img/cert-ccna-srwe-960.jpg"
+                   srcset="img/cert-ccna-srwe-480.jpg 480w, img/cert-ccna-srwe-960.jpg 960w"
+                   sizes="(min-width: 960px) 340px, (min-width: 640px) 45vw, 92vw"
+                   width="960" height="651" alt="" loading="lazy">
+            </figure>
+            <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
+            <p class="detalle">Cisco Networking Academy · Universidad Politécnica de Sinaloa<br><span lang="es">22 de abril de 2026</span><span lang="en">April 22, 2026</span><span lang="fr">22 avril 2026</span></p>
+            <p class="enlaces">
+              <a href="certificados/ccna-srwe.pdf" target="_blank" rel="noopener noreferrer"><span lang="es">Ver certificado (PDF)</span><span lang="en">View certificate (PDF)</span><span lang="fr">Voir le certificat (PDF)</span></a>
+            </p>
+          </article>
+
+          <article class="tarjeta certificado">
+            <figure>
+              <img src="img/cert-linux-essentials-960.jpg"
+                   srcset="img/cert-linux-essentials-480.jpg 480w, img/cert-linux-essentials-960.jpg 960w"
+                   sizes="(min-width: 960px) 340px, (min-width: 640px) 45vw, 92vw"
+                   width="960" height="651" alt="" loading="lazy">
+            </figure>
+            <h3><span lang="es">Fundamentos de Linux</span><span lang="en">Linux Essentials</span><span lang="fr">Linux Essentials</span></h3>
+            <p class="detalle">Cisco Networking Academy · Universidad Politécnica de Sinaloa<br><span lang="es">20 de abril de 2026</span><span lang="en">April 20, 2026</span><span lang="fr">20 avril 2026</span></p>
+            <p class="enlaces">
+              <a href="certificados/linux-essentials.pdf" target="_blank" rel="noopener noreferrer"><span lang="es">Ver certificado (PDF)</span><span lang="en">View certificate (PDF)</span><span lang="fr">Voir le certificat (PDF)</span></a>
+            </p>
+          </article>
+
+          <article class="tarjeta certificado">
+            <figure>
+              <img src="img/cert-ccna-itn-960.jpg"
+                   srcset="img/cert-ccna-itn-480.jpg 480w, img/cert-ccna-itn-960.jpg 960w"
+                   sizes="(min-width: 960px) 340px, (min-width: 640px) 45vw, 92vw"
+                   width="960" height="651" alt="" loading="lazy">
+            </figure>
+            <h3>CCNA: Introduction to Networks</h3>
+            <p class="detalle">Cisco Networking Academy · Universidad Politécnica de Sinaloa<br><span lang="es">5 de diciembre de 2025</span><span lang="en">December 5, 2025</span><span lang="fr">5 décembre 2025</span></p>
+            <p class="enlaces">
+              <a href="certificados/ccna-itn.pdf" target="_blank" rel="noopener noreferrer"><span lang="es">Ver certificado (PDF)</span><span lang="en">View certificate (PDF)</span><span lang="fr">Voir le certificat (PDF)</span></a>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor">
+        <h2 id="titulo-contacto"><span lang="es">Contacto</span><span lang="en">Contact</span><span lang="fr">Contact</span></h2>
+        <address>
+          <p><a class="correo" href="mailto:gabrielsanchezqw@gmail.com">gabrielsanchezqw@gmail.com</a></p>
+          <p class="acciones acciones--centro">
+          </p>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>© 2026 Gabriel Antonio Sánchez Laveaga</p>
+  </footer>
+</body>
+</html>
